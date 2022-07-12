@@ -1,12 +1,21 @@
-import React from 'react';
-import { render } from 'react-dom';
+import React from "react";
+import { render } from "react-dom";
+import App from "./App";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
+import "./index.scss";
 
-const rootElement = document.getElementById('root');
+const client = new ApolloClient({
+  uri: "https://api.graphql.jobs/",
+  cache: new InMemoryCache(),
+});
+const rootElement = document.getElementById("root");
 
 render(
   <React.StrictMode>
-              <App />
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
   </React.StrictMode>,
   rootElement
 );
