@@ -2,6 +2,7 @@ import React from "react";
 // import { JobsProvider } from '../../contexts/jobs.context';
 import JobPost from "../job-post/job-post";
 import Spinner from "../spinner/spinner";
+
 import "./container.scss";
 const Container = ({ jobs, loading, error }) => {
 
