@@ -1,21 +1,33 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;500;600;700&display=swap');
+
+*,
+*::after,
+*::before {
   margin: 0;
-  padding: 20px 40px;
-  font-family: 'Open Sans Condensed', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  // font-family: "Open Sans Condensed", sans-serif;
+  font-family: 'Karla', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ecf0f1;
+}
+html,
+body {
+  height: 100%;
+}
+html{
+  font-size: 62.5%;
+}
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
 a {
   text-decoration: none;
   color: black;
-}
-
-* {
-  box-sizing: border-box;
 }

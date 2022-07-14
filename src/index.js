@@ -1,8 +1,8 @@
 import React from "react";
-import { render } from "react-dom";
+import ReactDOM from "react-dom/client";
 import App from "./App";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
-
+import { JobsProvider } from "./contexts/jobs.context";
 import "./index.scss";
 
 const client = new ApolloClient({
@@ -11,11 +11,13 @@ const client = new ApolloClient({
 });
 const rootElement = document.getElementById("root");
 
-render(
+
+ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <App />
+      <JobsProvider>
+        <App />
+      </JobsProvider>
     </ApolloProvider>
-  </React.StrictMode>,
-  rootElement
+  </React.StrictMode>
 );
