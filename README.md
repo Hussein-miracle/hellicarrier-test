@@ -1,70 +1,15 @@
-# Getting Started with Create React App
+# Hellicarrier engineering CHALLENGE
+- This is the take home assessment for the Hellicarrier React / React Native developer engineering challenge. 
+- This  is a simple app built with React,GraphQl, Apollo-client  and SASS(SCSS),it's a job listing app with filter and search functionalities.
+- Apollo-client is used for making queries as oppose to using axios or react-query so as to cache the  query request for refetching purposes.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## FOLDER STRUCTURE
+- Contexts: This contains a file that contains the context that fetches and provides the job data fetched,and renders the spinner if the data is being loaded,likewise if there is an error while trying to fetch. 
+- Components: contains stateless reusable components with their stylings.
+- Util: contains  helper functions that can be reused.
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### LOGIC SPLITTING IN FILES
+- The jobs.contexts.js is file that fetches and provides the job data fetched,and renders the spinner if the data is being loaded,likewise if there is an error while       trying to fetch and provide the data needed at every level of the component so that props drilling is reduced. 
+- The App.js file manage filtering and searching state. It provides functions to the children so that they can change its state. Also supplies relevant data such as filtering state and search text to show only valid Job Postings. controls the filtering and serching functionalities.
+- Container.jsx:This houses the whole job listing uses the JobPost component to render the jobs data fetched; 
+- JobPosts.jsx is a resuable stateless component that renders  the job post,the container component being it's parent.
