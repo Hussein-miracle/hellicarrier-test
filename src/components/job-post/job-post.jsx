@@ -2,7 +2,8 @@ import React from "react";
 import { randomColor } from "../../util/random-hex";
 import "./job-post.scss";
 
-const JobPost = ({ company, title, location, tags, link, date }) => {
+const JobPost = ({job: { companyName:company, title, location,locationNames, tags, applyUrl:link, createdAt }}) => {
+  const date = createdAt.toDateString();
   return (
     <div className="job-post">
       <div className="job-post__header">
@@ -17,7 +18,7 @@ const JobPost = ({ company, title, location, tags, link, date }) => {
                 Role : <span>{title} </span>
               </h3>
               <h4>
-                Location : <span>{location || 'Remote'}</span>
+                Location : <span>{location || locationNames || 'Remote'}</span>
               </h4>
               <h4>
                 Date posted : <span>{date}</span>

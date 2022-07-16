@@ -28,12 +28,7 @@ const Container = ({ jobs, loading, error }) => {
           <JobPost
 
             key={job.id+index}
-            company={job.companyName}
-            title={job.title}
-            location={job.location || job.locationNames}
-            tags={job.tags}
-            link={job.applyUrl}
-            date={job.createdAt.toDateString()}
+            job={job}
           />
         );
       })}
